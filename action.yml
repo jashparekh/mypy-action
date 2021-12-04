@@ -1,0 +1,36 @@
+# action.yml
+name: 'Mypy Action'
+description: 'GitHub Action to run mypy linting'
+inputs:
+  path:
+    description: 'File or directory to run mypy on'
+    required: false
+    default: '.'
+  mypy_version:
+    description: 'Version of mypy library to use for linting'
+    required: false
+    default: '0.910'
+  mypy_config_file:
+    description: 'Location of mypy config file in the repository'
+    required: false
+    default: ''
+  mypy_flags:
+    description: 'Optional mypy flags (refer to `mypy --help`)'
+    required: false
+    default: ''
+  python_version:
+    description: 'Python version to use for running validation'
+    required: false
+    default: '3.10'
+outputs:
+  output:
+    description: 'The output of mypy'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
+    - ${{ inputs.mypy_version }}
+    - ${{ inputs.mypy_config_file }}
+    - ${{ inputs.mypy_flags }}
+    - ${{ inputs.python_version }}

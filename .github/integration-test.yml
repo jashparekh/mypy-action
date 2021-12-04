@@ -1,0 +1,29 @@
+name: "Integration Test"
+on:
+  push:
+    branches:
+      - main
+  pull_request_target:
+    branches:
+      - main
+
+env:
+  PYTHON_VERSION: "3.10"
+
+jobs:
+  deploy_schemas:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.6", "3.7", "3.8", "3.9", "3.10" ]
+    name: Mypy Lint
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Mypy Lint
+        uses: ./ # Uses an action in the root directory
+        with:
+          mypy_version: '0.901'
+          python_version: '3.9'
