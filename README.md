@@ -22,8 +22,8 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Deploy schemas to BigQuery
-        uses: jashparekh/mypy-action@v2
+      - name: Run Mypy
+        uses: jashparekh/mypy-action@v1
         with:
           path: '.'
           mypy_version: '0.910'
