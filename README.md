@@ -14,7 +14,7 @@ on:
       branches: ["main"]
 
 jobs:
-  deploy_schemas:
+  run_mypy:
     runs-on: ubuntu-latest
     name: Mypy
     steps:
