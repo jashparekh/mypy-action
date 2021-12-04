@@ -9,5 +9,7 @@ mypy_version=${2:-0.910}
 mypy_config_file=${3:-""}
 mypy_flags=${4:-""}
 
+pip install mypy==${mypy_version}
+
 # get mypy version
 mypy --version

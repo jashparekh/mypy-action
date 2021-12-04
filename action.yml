@@ -18,10 +18,6 @@ inputs:
     description: 'Optional mypy flags (refer to `mypy --help`)'
     required: false
     default: ''
-  python_version:
-    description: 'Python version to use for running validation'
-    required: false
-    default: '3.10'
 outputs:
   output:
     description: 'The output of mypy'
@@ -33,4 +29,3 @@ runs:
     - ${{ inputs.mypy_version }}
     - ${{ inputs.mypy_config_file }}
     - ${{ inputs.mypy_flags }}
-    - ${{ inputs.python_version }}
