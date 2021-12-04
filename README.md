@@ -1,6 +1,8 @@
 # Mypy Github Action
 
-GitHub Action for [mypy](https://mypy.readthedocs.io/en/master/)
+GitHub Action for [mypy](https://mypy.readthedocs.io/en/master/).
+
+Influenced by [jpetrucciani/mypy-check](https://github.com/jpetrucciani/mypy-check). 
 
 ### Simple
 
