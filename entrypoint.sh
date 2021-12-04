@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ax
 
-args = ""
+mypy_args=""
 
 # mypy output file
 output_file=/tmp/mypy.out
@@ -17,12 +17,16 @@ pip install mypy==${mypy_version}
 mypy --version
 
 # concat mypy config file if provided
-if [ -z "$mypy_config_file" ] then
-  args = "${args} --config-file=${mypy_config_file}"
+if [ $mypy_config_file ]
+then
+  mypy_args+=" --config-file=${mypy_config_file}"
+fi
 
 # concat mypy flags if provided
-if [ -z "$flags" ] then
-  args = "${args} ${flags}"
+if [ "$flags" ]
+then
+  mypy_args += " $flags"
+fi
 
 # run mypy
-echo "mypy --show-column-numbers --hide-error-context ${args}"
+mypy --show-column-numbers --hide-error-context ${mypy_args} ${lint_path}

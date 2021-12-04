@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  devbox:
+    build:
+      dockerfile: "./Dockerfile"
+      context: "."
+    stdin_open: "true" # docker run -i
+    tty: "true"        # docker run -t
+    command: /bin/bash
+    volumes:
+      - "./:/app"
+
+volumes:
+  home:
+  env:
+    driver: local
