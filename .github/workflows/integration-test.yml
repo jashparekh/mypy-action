@@ -26,3 +26,4 @@ jobs:
         uses: ./ # Uses an action in the root directory
         with:
           mypy_version: '0.901'
+          mypy_flags: '--verbose'
