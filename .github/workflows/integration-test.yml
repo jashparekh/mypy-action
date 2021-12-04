@@ -26,4 +26,3 @@ jobs:
         uses: ./ # Uses an action in the root directory
         with:
           mypy_version: '0.901'
-          python_version: '3.9'
