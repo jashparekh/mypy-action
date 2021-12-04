@@ -25,4 +25,4 @@ if [ -z "$flags" ] then
   args = "${args} ${flags}"
 
 # run mypy
-mypy --show-column-numbers --hide-error-context $flags
+echo "mypy --show-column-numbers --hide-error-context ${args}"
