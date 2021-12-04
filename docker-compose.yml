@@ -1,15 +1,21 @@
 version: '3.5'
 
 services:
-  devbox:
+  devbox: &devbox
     build:
-      dockerfile: "./Dockerfile"
+      dockerfile: "./docker/devbox.dockerfile"
       context: "."
     stdin_open: "true" # docker run -i
     tty: "true"        # docker run -t
     command: /bin/bash
     volumes:
       - "./:/app"
+
+  # run all the linting locally
+  # - black & isort will format code to address issues
+  lint:
+    <<: *devbox
+    command: "docker/run_linting.sh --format-code"
 
 volumes:
   home:

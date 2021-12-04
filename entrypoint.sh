@@ -30,3 +30,9 @@ fi
 
 # run mypy
 mypy --show-column-numbers --hide-error-context ${mypy_args} ${lint_path}
+exit_code="${PIPESTATUS[0]}"
+
+# analyze output
+python /github.py "${output_file}"
+
+exit "$exit_code"
