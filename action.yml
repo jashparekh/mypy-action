@@ -1,6 +1,10 @@
 # action.yml
-name: 'Mypy Action'
+name: 'Mypy Github Action'
 description: 'GitHub Action to run mypy linting'
+author: 'Jash Parekh <me@jashparekh.com>'
+branding:
+  icon: 'activity'
+  color: 'orange'
 inputs:
   path:
     description: 'File or directory to run mypy on'
