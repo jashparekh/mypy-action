@@ -28,8 +28,9 @@ then
   mypy_args += " $flags"
 fi
 
-# run mypy
-mypy --show-column-numbers --hide-error-context ${mypy_args} ${lint_path}
+# run mypy, tee output to file
+# shellcheck disable=2086
+mypy --show-column-numbers --hide-error-context ${mypy_args} ${lint_path} | tee "${output_file}"
 exit_code="${PIPESTATUS[0]}"
 
 # analyze output
