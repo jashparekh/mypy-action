@@ -55,3 +55,15 @@ Default: `mypy.ini`
 Optional mypy flags (refer to `mypy --help`)
 
 Default: `mypy.ini`
+
+### `requirements` (optional, string)
+
+Optional, if not empty specified libraries will be installed before running `mypy`
+
+Default: `""`
+
+### `python_version` (optional, string)
+
+Python version to use to run lint
+
+Default: `3.10`

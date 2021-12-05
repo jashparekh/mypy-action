@@ -10,8 +10,14 @@ lint_path=${1:-.}
 mypy_version=${2:-0.910}
 mypy_config_file=$3
 flags=$4
+requirements=$5
 
 pip install mypy==${mypy_version}
+
+# install requirements, if defined
+if [ ! -z "$requirements" ]; then
+    pip install $requirements
+fi
 
 # get mypy version
 mypy --version
