@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run Mypy
-        uses: jashparekh/mypy-action@v1
+        uses: jashparekh/mypy-action@v2
         with:
           path: '.'
           mypy_version: '0.910'
