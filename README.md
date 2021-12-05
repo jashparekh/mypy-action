@@ -62,6 +62,12 @@ Optional, if not empty specified libraries will be installed before running `myp
 
 Default: `""`
 
+### `requirement_files` (optional, string)
+
+Optional, if not empty specified install all the libraries specified in the files before running `mypy`
+
+Default: `""`
+
 ### `python_version` (optional, string)
 
 Python version to use to run lint

@@ -11,6 +11,7 @@ mypy_version=${2:-0.910}
 mypy_config_file=$3
 flags=$4
 requirements=$5
+requirement_files=$6
 
 pip install mypy==${mypy_version}
 
@@ -23,14 +24,12 @@ fi
 mypy --version
 
 # concat mypy config file if provided
-if [ $mypy_config_file ]
-then
+if [ ! -z "$mypy_config_file" ]; then
   mypy_args+=" --config-file=${mypy_config_file}"
 fi
 
 # concat mypy flags if provided
-if [ "$flags" ]
-then
+if [ ! -z "$flags" ]; then
   mypy_args += " $flags"
 fi
 

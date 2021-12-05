@@ -26,6 +26,10 @@ inputs:
     description: 'Optional, if not empty specified libraries will be installed before running `mypy`'
     required: false
     default: ''
+  requirement_files:
+    description: 'Optional, if not empty specified install all the libraries specified in the files before running `mypy`'
+    required: false
+    default: ''
   python_version:
     description: 'Python version to use to run lint'
     required: false
@@ -40,5 +44,5 @@ runs:
       run: docker build ${{ github.action_path }} --build-arg "python_version=${{ inputs.python_version }}" -t mypy
       shell: bash
     - id: run
-      run: docker run --rm -v $(pwd):/github/workspace --workdir /github/workspace mypy "${{ inputs.path }}" "${{ inputs.mypy_version }}" "${{ inputs.mypy_config_file }}" "${{ inputs.mypy_options }}" "${{ inputs.requirements }}"
+      run: docker run --rm -v $(pwd):/github/workspace --workdir /github/workspace mypy "${{ inputs.path }}" "${{ inputs.mypy_version }}" "${{ inputs.mypy_config_file }}" "${{ inputs.mypy_options }}" "${{ inputs.requirements }}" "${{ inputs.requirement_files }}"
       shell: bash
