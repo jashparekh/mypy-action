@@ -42,7 +42,7 @@ Default: `.`
 
 Version of mypy library to use for linting.
 
-Default: `0.910`
+Default: `latest`
 
 ### `mypy_config_file` (optional, string)
 
