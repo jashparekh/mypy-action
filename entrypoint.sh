@@ -7,13 +7,18 @@ mypy_args=""
 output_file=/tmp/mypy.out
 
 lint_path=${1:-.}
-mypy_version=${2:-0.910}
+mypy_version=$2
 mypy_config_file=$3
 flags=$4
 requirements=$5
 requirements_files=$6
 
-pip install mypy==${mypy_version}
+# install specified mypy version, if defined else install latest
+if [ ! -z "$mypy_version" ]; then
+  pip install mypy==${mypy_version}
+else
+  pip install mypy
+fi
 
 # install requirements, if defined
 if [ ! -z "$requirements" ]; then
