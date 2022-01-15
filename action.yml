@@ -13,7 +13,7 @@ inputs:
   mypy_version:
     description: 'Version of mypy library to use for linting'
     required: false
-    default: '0.910'
+    default: ''
   mypy_config_file:
     description: 'Location of mypy config file in the repository'
     required: false
