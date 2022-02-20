@@ -28,6 +28,8 @@ jobs:
           path: '.'
           mypy_version: '0.910'
           mypy_flags: '--verbose'
+          mypy_config_file: 'mypy.ini'
+          requirement_files: 'requirements.txt'
 ```
 
 ## Configuration
